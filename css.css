@@ -1,0 +1,195 @@
+/* ==========================================
+   1. RESET & BASE STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding-top: 80px; /* Jarak supaya content tak tenggelam bawah top nav */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* ==========================================
+   2. TOP NAVIGATION BAR (Header)
+   ========================================== */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #666666;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #000000;
+}
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    color: #111111;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+.btn-secondary {
+    background-color: #f5f5f7;
+    color: #111111;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e5ea;
+}
+
+/* ==========================================
+   4. LATEST POSTS SECTION
+   ========================================== */
+.latest-posts {
+    padding: 60px 0;
+}
+
+.latest-posts h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.post-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: #999999;
+}
+
+.post-card h3 a:hover {
+    color: #666666;
+}
+
+.post-card p {
+    color: #555555;
+}
+
+/* ==========================================
+   5. FOOTER
+   ========================================== */
+.site-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.85rem;
+    color: #999999;
+    border-top: 1px solid #eaeaea;
+    margin-top: 60px;
+}
+
+/* ==========================================
+   6. RESPONSIVE DESIGN (Mobile Friendly)
+   ========================================== */
+@media (max-width: 768px) {
+    .top-header {
+        padding: 0 5%;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+}
