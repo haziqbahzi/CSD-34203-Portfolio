@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | My Portfolio</title>
+    <title>Contact | Haziq Bahzi Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
 
     <header class="top-header">
         <div class="logo">
-            <a href="index.html"><strong>Dev</strong>.Portfolio</a>
+            <a href="index.html"><strong>Haziq Bahzi</strong>.Dev</a>
         </div>
         <nav class="top-navbar">
             <ul class="nav-links">
@@ -28,36 +28,54 @@
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Contact Me.</h1>
-                <p>Have a question, an interesting project idea, or just want to say hi? Feel free to reach out through any of the platforms below.</p>
-            </div>
-        </section>
-
-        <section class="latest-posts">
-            <h2>Get In Touch</h2>
-            <div class="post-grid">
+        <section class="contact-section">
+            <h1 class="section-title">Get In Touch</h1>
+            <p class="section-subtitle">Let's collaborate! Feel free to reach out for multimedia projects, 3D development, or professional inquiries.</p>
+            
+            <div class="contact-container">
                 
-                <article class="post-card">
-                    <h3>Official Email</h3>
-                    <p>Feel free to drop me an email at: <br>
-                    <a href="mailto:haziqbahzi@student.unisza.edu.my" style="text-decoration: underline; font-weight: 600;">haziqbahzi@student.unisza.edu.my</a></p>
-                </article>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p class="info-desc">You can directly reach me through my academic network or official professional handles:</p>
+                    
+                    <div class="info-details">
+                        <p><strong>📍 Location:</strong> Faculty of Informatics & Computing, UniSZA Besut Campus, Terengganu, Malaysia</p>
+                        <p><strong>✉️ Email:</strong> haziqbahzi45@gmail.com</p> 
+                        <p><strong>💻 GitHub:</strong> <a href="https://github.com" target="_blank" style="text-decoration: underline;">github.com/haziqbahzi</a></p>
+                        <p><strong>🌐 LinkedIn:</strong> <a href="https://linkedin.com" target="_blank" style="text-decoration: underline;">linkedin.com/in/haziqbahzi</a></p>
+                    </div>
+                </div>
 
-                <article class="post-card">
-                    <h3>GitHub Profile</h3>
-                    <p>Explore my open-source projects and follow my coding updates here: <br>
-                    <a href="https://github.com/haziqbahzi" target="_blank" style="text-decoration: underline; font-weight: 600;">github.com/haziqbahzi</a></p>
-                </article>
+                <div class="contact-form-container">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+                    </form>
+                </div>
 
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 My Portfolio. Hak Cipta Terpelihara.</p>
+        <p>&copy; 2026 Muhammad Haziq Bahzi. Hak Cipta Terpelihara.</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
