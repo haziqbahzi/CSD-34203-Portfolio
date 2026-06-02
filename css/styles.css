@@ -198,3 +198,69 @@ main {
         text-align: center;
     }
 }
+/* ==========================================
+   7. DARK MODE STYLES & TOGGLE BUTTON
+   ========================================== */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 15px;
+    transition: transform 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Apabila kelas .dark-theme diaktifkan oleh JavaScript */
+body.dark-theme {
+    background-color: #121212; /* Latar belakang hitam pekat */
+    color: #e0e0e0; /* Teks kelabu cerah supaya selesa mata memandang */
+}
+
+body.dark-theme .top-header {
+    background-color: rgba(18, 18, 18, 0.95);
+    border-bottom: 1px solid #2c2c2c;
+}
+
+body.dark-theme .nav-links a {
+    color: #aaaaaa;
+}
+
+body.dark-theme .nav-links a:hover, 
+body.dark-theme .nav-links a.active {
+    color: #ffffff;
+}
+
+body.dark-theme .hero-content h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .hero-content p {
+    color: #aaaaaa;
+}
+
+body.dark-theme .btn-secondary {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+body.dark-theme .btn-secondary:hover {
+    background-color: #333333;
+}
+
+body.dark-theme .hero-section,
+body.dark-theme .site-footer {
+    border-color: #2c2c2c;
+}
+
+body.dark-theme .post-card h3 a:hover {
+    color: #aaaaaa;
+}
+
+body.dark-theme .post-card p {
+    color: #aaaaaa;
+}
