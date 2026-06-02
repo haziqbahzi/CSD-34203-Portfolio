@@ -206,9 +206,11 @@ main {
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 5px;
-    margin-left: 15px;
+    padding: 0;         /* Tukar ke 0 supaya sejajar teks menu */
+    margin-left: 0;     /* Tukar ke 0 supaya ikut sistem gap flexbox */
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
 }
 
 #dark-mode-toggle:hover {

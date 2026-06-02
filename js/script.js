@@ -1,38 +1,41 @@
 // ==========================================
-// JAVASCRIPT: LOGIK INTERAKTIF DARK MODE
+// JAVASCRIPT: LOGIK INTERAKTIF DARK MODE (INLINE MENU)
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Cari navbar di dalam halaman
-    const navbar = document.querySelector(".top-navbar");
+    // 1. Cari kontena senarai menu (ul) dan bukannya navbar luaran
+    const navLinks = document.querySelector(".nav-links");
     
-    if (navbar) {
-        // 2. Cipta butang Dark Mode secara dinamik
+    if (navLinks) {
+        // 2. Cipta elemen 'li' (list item) supaya dia mengikut susunan menu sedia ada
+        const toggleLi = document.createElement("li");
+        
+        // 3. Cipta butang Dark Mode
         const toggleBtn = document.createElement("button");
         toggleBtn.id = "dark-mode-toggle";
-        toggleBtn.innerHTML = "🌙"; // Simbol bulan untuk mod gelap
+        toggleBtn.innerHTML = "🌙"; // Simbol bulan asal
         toggleBtn.setAttribute("aria-label", "Toggle Dark Mode");
         
-        // 3. Masukkan butang ke dalam navbar
-        navbar.appendChild(toggleBtn);
+        // 4. Masukkan butang ke dalam 'li', kemudian masukkan 'li' ke dalam 'ul' (.nav-links)
+        toggleLi.appendChild(toggleBtn);
+        navLinks.appendChild(toggleLi);
 
-        // 4. Semak jika pengguna pernah aktifkan dark mode sebelum ini (Local Storage)
+        // 5. Semak jika pengguna pernah aktifkan dark mode sebelum ini
         if (localStorage.getItem("theme") === "dark") {
             document.body.classList.add("dark-theme");
-            toggleBtn.innerHTML = "☀️"; // Tukar kepada simbol matahari
+            toggleBtn.innerHTML = "☀️"; // Tukar kepada matahari
         }
 
-        // 5. Fungsi apabila butang diklik
+        // 6. Fungsi apabila butang diklik
         toggleBtn.addEventListener("click", () => {
             document.body.classList.toggle("dark-theme");
             
-            // Semak jika kelas dark-theme wujud pada body
             if (document.body.classList.contains("dark-theme")) {
-                localStorage.setItem("theme", "dark"); // Simpan pilihan dalam browser
-                toggleBtn.innerHTML = "☀️"; // Mod gelap aktif, tunjuk matahari
+                localStorage.setItem("theme", "dark");
+                toggleBtn.innerHTML = "☀️";
             } else {
-                localStorage.setItem("theme", "light"); // Simpan pilihan dalam browser
-                toggleBtn.innerHTML = "🌙"; // Mod cerah aktif, tunjuk bulan
+                localStorage.setItem("theme", "light");
+                toggleBtn.innerHTML = "🌙";
             }
         });
     }
