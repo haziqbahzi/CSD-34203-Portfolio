@@ -7,18 +7,14 @@
     box-sizing: border-box;
 }
 
+/* --- LIGHT MODE (ASAS) --- */
 body {
     font-family: 'Inter', sans-serif;
-    /* Latar belakang gelap dengan corak grid halus ala-ala blueprint reka bentuk 3D */
-    background-color: #0b0f19;
-    background-image: 
-        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-    background-size: 20px 20px;
-    color: #f1f5f9;
+    background-color: #f8fafc;
+    color: #0f172a;
     line-height: 1.6;
     padding-top: 80px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
 }
 
 a {
@@ -28,11 +24,11 @@ a {
 }
 
 strong {
-    color: #818cf8; /* Warna Indigo Terang */
+    color: #4f46e5;
 }
 
 /* ==========================================
-   2. TOP NAVIGATION BAR (Header)
+   2. TOP NAVIGATION BAR
    ========================================== */
 .top-header {
     position: fixed;
@@ -40,25 +36,21 @@ strong {
     left: 0;
     width: 100%;
     height: 70px;
-    /* Kaca Lutsinar (Glassmorphism effect) */
-    background-color: rgba(11, 15, 25, 0.75);
+    background-color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #e2e8f0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
     z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .logo {
     font-size: 1.2rem;
     letter-spacing: -0.5px;
     font-weight: 600;
-}
-
-.logo strong {
-    color: #818cf8;
 }
 
 .nav-links {
@@ -71,16 +63,27 @@ strong {
 .nav-links a {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: #64748b;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #a5b4fc;
-    text-shadow: 0 0 10px rgba(165, 180, 252, 0.5);
+    color: #4f46e5;
+}
+
+/* Butang Dark Mode */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
 }
 
 /* ==========================================
-   3. HERO SECTION (Cyberpunk Aurora Glow)
+   3. HERO SECTION
    ========================================== */
 main {
     max-width: 1000px;
@@ -90,21 +93,8 @@ main {
 
 .hero-section {
     padding: 60px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #e2e8f0;
     position: relative;
-}
-
-/* Efek Cahaya Aurora di belakang teks */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 10%;
-    left: -10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-    z-index: -1;
-    pointer-events: none;
 }
 
 .hero-container {
@@ -114,22 +104,16 @@ main {
     gap: 50px;
 }
 
-.hero-content {
-    flex: 1;
-}
-
 .hero-content h1 {
     font-size: 3rem;
     font-weight: 800;
     letter-spacing: -1.5px;
     margin-bottom: 20px;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #94a3b8;
+    color: #475569;
     margin-bottom: 30px;
     max-width: 650px;
 }
@@ -148,318 +132,159 @@ main {
     transition: all 0.2s ease;
 }
 
-/* Butang Neon Gradient */
 .btn-primary {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: #ffffff;
-    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.7);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
 }
 
 .btn-secondary {
-    background-color: rgba(30, 41, 59, 0.7);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
 }
 
-.btn-secondary:hover {
-    background-color: rgba(51, 65, 85, 0.7);
-}
-
-/* Gambar Profil Dengan Halo Neon Berwarna-warni */
 .hero-image img {
     width: 230px;
     height: 230px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #0b0f19;
-    /* Gabungan shadow berbentuk bulatan neon pink, ungu dan teal */
-    box-shadow: 
-        0 0 0 2px #6366f1, 
-        0 0 20px #6366f1, 
-        0 0 40px #ec4899,
-        0 12px 30px rgba(0, 0, 0, 0.5);
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.hero-image img:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 
-        0 0 0 3px #4f46e5, 
-        0 0 30px #4f46e5, 
-        0 0 50px #38bdf8,
-        0 12px 35px rgba(99, 102, 241, 0.5);
-}
-
 /* ==========================================
-   4. PREMIUM CARD & GRID LAYOUT (Futuristic Glass)
+   4. CARDS & GRID
    ========================================== */
-.latest-posts {
-    padding: 50px 0;
-}
-
-.latest-posts h2 {
-    font-size: 1.6rem;
-    font-weight: 800;
-    margin-bottom: 30px;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-}
-
-.post-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
+.latest-posts { padding: 50px 0; }
+.latest-posts h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 30px; }
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
 
 .post-card {
-    background-color: rgba(30, 41, 59, 0.45);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
-
-/* Kesan Hover Bercahaya Ungu Neon pada Kad */
 .post-card:hover {
     transform: translateY(-6px);
-    background-color: rgba(30, 41, 59, 0.7);
-    box-shadow: 0 20px 30px rgba(99, 102, 241, 0.15);
-    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 12px 20px rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
 }
 
-.post-date {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #818cf8;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.post-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #ffffff;
-}
-
-.post-card h3 a:hover {
-    color: #a5b4fc;
-}
-
-.post-card p {
-    color: #94a3b8;
-    font-size: 0.95rem;
-}
+.post-date { font-size: 0.8rem; font-weight: 700; color: #4f46e5; text-transform: uppercase; }
+.post-card h3 { font-size: 1.25rem; font-weight: 700; }
+.post-card p { color: #475569; font-size: 0.95rem; }
 
 /* ==========================================
-   5. FOOTER
+   5. BLOG & CONTACT PAGES
    ========================================== */
-.site-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.85rem;
-    color: #64748b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 60px;
-}
+.blog-section, .contact-section { padding: 60px 0; }
+.section-title { font-size: 2.8rem; font-weight: 800; letter-spacing: -1.5px; }
+.section-subtitle { font-size: 1.1rem; color: #64748b; margin-bottom: 50px; }
+
+.blog-list { display: flex; flex-direction: column; gap: 40px; }
+.blog-post-card h2 { font-size: 1.8rem; margin: 10px 0 15px 0; }
+.post-meta { font-size: 0.85rem; font-weight: 700; color: #4f46e5; text-transform: uppercase; }
+.post-excerpt { color: #334155; margin-bottom: 20px; line-height: 1.7; }
+.blog-separator { border-top: 1px solid #e2e8f0; margin: 20px 0; }
+
+.contact-container { display: flex; gap: 60px; margin-top: 40px; }
+.contact-info, .contact-form-container { flex: 1; }
+.info-desc { color: #475569; margin-bottom: 25px; }
+.info-details p { margin-bottom: 15px; color: #1e293b; }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+.form-group input, .form-group textarea { padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; }
+
+.site-footer { text-align: center; padding: 40px 0; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid #e2e8f0; }
 
 /* ==========================================
-   6. DARK MODE TOGGLE (Bypass/Kekalkan Estetika Gelap)
+   6. 🚀 DARK MODE (CYBERPUNK AURORA) 🚀
    ========================================== */
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #38bdf8;
-    text-shadow: 0 0 10px #38bdf8;
-}
-
-/* ==========================================
-   7. RESPONSIVE DESIGN (Mobile Friendly)
-   ========================================== */
-@media (max-width: 768px) {
-    .top-header {
-        padding: 0 5%;
-    }
-    
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    
-    .hero-content p {
-        margin: 0 auto 15px auto;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-    
-    .btn {
-        text-align: center;
-    }
-    
-    .post-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ==========================================
-   8. BLOG PAGE SPECIFIC STYLES
-   ========================================== */
-.blog-section {
-    padding: 60px 0;
-}
-
-.section-title {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #64748b;
-    margin-bottom: 50px;
-}
-
-.blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.blog-post-card {
-    background: transparent;
-    padding: 10px 0;
-}
-
-.blog-post-card h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 10px 0 15px 0;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-}
-
-.post-meta {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #818cf8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.post-excerpt {
-    font-size: 1.05rem;
-    color: #94a3b8;
-    margin-bottom: 20px;
-    line-height: 1.7;
-}
-
-.blog-action {
-    margin-top: 25px;
-}
-
-.blog-separator {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin: 20px 0;
-}
-
-/* ==========================================
-   9. CONTACT PAGE SPECIFIC STYLES
-   ========================================== */
-.contact-section {
-    padding: 60px 0;
-}
-
-.contact-container {
-    display: flex;
-    gap: 60px;
-    margin-top: 40px;
-}
-
-.contact-info, .contact-form-container {
-    flex: 1;
-}
-
-.contact-info h3, .contact-form-container h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-}
-
-.info-desc {
-    color: #94a3b8;
-    margin-bottom: 25px;
-}
-
-.info-details p {
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-    color: #cbd5e1;
-}
-
-.info-details a {
-    color: #818cf8;
-}
-
-.info-details a:hover {
-    color: #a5b4fc;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
+body.dark-theme {
+    background-color: #0b0f19;
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
     color: #f1f5f9;
 }
 
-.form-group input, .form-group textarea {
-    padding: 12px 16px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    background-color: rgba(30, 41, 59, 0.5);
-    color: #ffffff;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+body.dark-theme strong { color: #818cf8; }
+
+body.dark-theme .top-header {
+    background-color: rgba(11, 15, 25, 0.75);
+    border-color: rgba(255, 255, 255, 0.05);
 }
 
-.form-group input:focus, .form-group textarea:focus {
-    border-color: #818cf8;
-    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+body.dark-theme .nav-links a { color: #94a3b8; }
+body.dark-theme .nav-links a:hover, body.dark-theme .nav-links a.active {
+    color: #a5b4fc;
+    text-shadow: 0 0 10px rgba(165, 180, 252, 0.5);
+}
+
+body.dark-theme #dark-mode-toggle { color: #38bdf8; text-shadow: 0 0 10px #38bdf8; }
+
+body.dark-theme .hero-section { border-color: rgba(255, 255, 255, 0.05); }
+body.dark-theme .hero-section::before {
+    content: ''; position: absolute; top: 10%; left: -10%; width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%); z-index: -1; pointer-events: none;
+}
+
+body.dark-theme .hero-content h1 { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+body.dark-theme .hero-content p { color: #94a3b8; }
+
+body.dark-theme .btn-secondary { background-color: rgba(30, 41, 59, 0.7); color: #ffffff; border-color: rgba(255, 255, 255, 0.1); }
+body.dark-theme .btn-secondary:hover { background-color: rgba(51, 65, 85, 0.7); }
+
+body.dark-theme .hero-image img {
+    border-color: #0b0f19;
+    box-shadow: 0 0 0 2px #6366f1, 0 0 20px #6366f1, 0 0 40px #ec4899, 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+body.dark-theme .hero-image img:hover {
+    box-shadow: 0 0 0 3px #4f46e5, 0 0 30px #4f46e5, 0 0 50px #38bdf8, 0 12px 35px rgba(99, 102, 241, 0.5);
+}
+
+body.dark-theme .post-card {
+    background-color: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(8px);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+body.dark-theme .post-card:hover {
+    background-color: rgba(30, 41, 59, 0.7);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 20px 30px rgba(99, 102, 241, 0.15);
+}
+body.dark-theme .post-card p { color: #94a3b8; }
+body.dark-theme .post-date, body.dark-theme .post-meta { color: #818cf8; }
+
+body.dark-theme .section-subtitle, body.dark-theme .post-excerpt, body.dark-theme .info-desc { color: #94a3b8; }
+body.dark-theme .blog-separator, body.dark-theme .site-footer { border-color: rgba(255, 255, 255, 0.05); }
+body.dark-theme .info-details p, body.dark-theme .form-group label { color: #cbd5e1; }
+body.dark-theme .info-details a { color: #818cf8; }
+
+body.dark-theme .form-group input, body.dark-theme .form-group textarea {
+    background-color: rgba(30, 41, 59, 0.5);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+body.dark-theme .form-group input:focus, body.dark-theme .form-group textarea:focus {
+    border-color: #818cf8; box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+}
+
+/* Responsive Base */
+@media (max-width: 768px) {
+    .hero-container, .contact-container { flex-direction: column; text-align: center; }
+    .hero-buttons { flex-direction: column; }
+    .post-grid { grid-template-columns: 1fr; }
 }
