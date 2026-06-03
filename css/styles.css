@@ -9,8 +9,13 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc; /* Warna latar kelabu lembut cerah */
-    color: #0f172a;
+    /* Latar belakang gelap dengan corak grid halus ala-ala blueprint reka bentuk 3D */
+    background-color: #0b0f19;
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #f1f5f9;
     line-height: 1.6;
     padding-top: 80px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -22,9 +27,8 @@ a {
     transition: color 0.2s ease;
 }
 
-/* Tulisan Tebal Menggunakan Warna Tema Utama */
 strong {
-    color: #6366f1; /* Indigo */
+    color: #818cf8; /* Warna Indigo Terang */
 }
 
 /* ==========================================
@@ -36,24 +40,25 @@ strong {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.85);
+    /* Kaca Lutsinar (Glassmorphism effect) */
+    background-color: rgba(11, 15, 25, 0.75);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
     z-index: 1000;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .logo {
     font-size: 1.2rem;
     letter-spacing: -0.5px;
+    font-weight: 600;
 }
 
 .logo strong {
-    color: #6366f1;
+    color: #818cf8;
 }
 
 .nav-links {
@@ -66,16 +71,16 @@ strong {
 .nav-links a {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #64748b;
+    color: #94a3b8;
 }
 
-/* Navigasi Aktif Menggunakan Warna Indigo */
 .nav-links a:hover, .nav-links a.active {
-    color: #6366f1;
+    color: #a5b4fc;
+    text-shadow: 0 0 10px rgba(165, 180, 252, 0.5);
 }
 
 /* ==========================================
-   3. HERO SECTION (Layout Balance Setup)
+   3. HERO SECTION (Cyberpunk Aurora Glow)
    ========================================== */
 main {
     max-width: 1000px;
@@ -85,7 +90,21 @@ main {
 
 .hero-section {
     padding: 60px 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+/* Efek Cahaya Aurora di belakang teks */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .hero-container {
@@ -104,12 +123,13 @@ main {
     font-weight: 800;
     letter-spacing: -1.5px;
     margin-bottom: 20px;
-    color: #0f172a;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    color: #475569;
+    color: #94a3b8;
     margin-bottom: 30px;
     max-width: 650px;
 }
@@ -128,46 +148,55 @@ main {
     transition: all 0.2s ease;
 }
 
-/* Butang Utama Bertukar Kecerunan (Gradient) Yang Sangat Menarik */
+/* Butang Neon Gradient */
 .btn-primary {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.7);
 }
 
 .btn-secondary {
-    background-color: #f1f5f9;
-    color: #0f172a;
-    border: 1px solid #e2e8f0;
+    background-color: rgba(30, 41, 59, 0.7);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-secondary:hover {
-    background-color: #e2e8f0;
+    background-color: rgba(51, 65, 85, 0.7);
 }
 
-/* Gambar Profil Dengan Border Bercahaya Tema */
+/* Gambar Profil Dengan Halo Neon Berwarna-warni */
 .hero-image img {
     width: 230px;
     height: 230px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 0 0 4px #6366f1, 0 12px 30px rgba(0, 0, 0, 0.15);
+    border: 4px solid #0b0f19;
+    /* Gabungan shadow berbentuk bulatan neon pink, ungu dan teal */
+    box-shadow: 
+        0 0 0 2px #6366f1, 
+        0 0 20px #6366f1, 
+        0 0 40px #ec4899,
+        0 12px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 }
 
 .hero-image img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 0 6px #4f46e5, 0 12px 35px rgba(99, 102, 241, 0.3);
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 
+        0 0 0 3px #4f46e5, 
+        0 0 30px #4f46e5, 
+        0 0 50px #38bdf8,
+        0 12px 35px rgba(99, 102, 241, 0.5);
 }
 
 /* ==========================================
-   4. PREMIUM CARD & GRID LAYOUT
+   4. PREMIUM CARD & GRID LAYOUT (Futuristic Glass)
    ========================================== */
 .latest-posts {
     padding: 50px 0;
@@ -178,7 +207,7 @@ main {
     font-weight: 800;
     margin-bottom: 30px;
     letter-spacing: -0.5px;
-    color: #0f172a;
+    color: #ffffff;
 }
 
 .post-grid {
@@ -188,28 +217,30 @@ main {
 }
 
 .post-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    background-color: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Kesan Gempak Apabila Mouse Hover Pada Kad Projek */
+/* Kesan Hover Bercahaya Ungu Neon pada Kad */
 .post-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04);
-    border-color: #6366f1;
+    background-color: rgba(30, 41, 59, 0.7);
+    box-shadow: 0 20px 30px rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.5);
 }
 
 .post-date {
     font-size: 0.8rem;
     font-weight: 700;
-    color: #6366f1; /* Ditukar ke warna penegas */
+    color: #818cf8;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -218,14 +249,15 @@ main {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.4;
+    color: #ffffff;
 }
 
 .post-card h3 a:hover {
-    color: #4f46e5;
+    color: #a5b4fc;
 }
 
 .post-card p {
-    color: #475569;
+    color: #94a3b8;
     font-size: 0.95rem;
 }
 
@@ -236,97 +268,25 @@ main {
     text-align: center;
     padding: 40px 0;
     font-size: 0.85rem;
-    color: #94a3b8;
-    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     margin-top: 60px;
 }
 
 /* ==========================================
-   6. DARK MODE TOGGLE BUTTON STYLES
+   6. DARK MODE TOGGLE (Bypass/Kekalkan Estetika Gelap)
    ========================================== */
 #dark-mode-toggle {
     background: none;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-#dark-mode-toggle:hover {
-    transform: scale(1.1);
+    color: #38bdf8;
+    text-shadow: 0 0 10px #38bdf8;
 }
 
 /* ==========================================
-   7. DARK MODE THEME STYLES
-   ========================================== */
-body.dark-theme {
-    background-color: #0f172a; /* Biru gelap premium mampat */
-    color: #f8fafc;
-}
-
-body.dark-theme .top-header {
-    background-color: rgba(15, 23, 42, 0.85);
-    border-color: #1e293b;
-}
-
-body.dark-theme .nav-links a {
-    color: #94a3b8;
-}
-
-body.dark-theme .nav-links a:hover, 
-body.dark-theme .nav-links a.active {
-    color: #818cf8;
-}
-
-body.dark-theme .hero-content h1 {
-    color: #ffffff;
-}
-
-body.dark-theme .hero-content p {
-    color: #94a3b8;
-}
-
-body.dark-theme .btn-secondary {
-    background-color: #1e293b;
-    color: #f8fafc;
-    border-color: #334155;
-}
-
-body.dark-theme .btn-secondary:hover {
-    background-color: #334155;
-}
-
-body.dark-theme .hero-section,
-body.dark-theme .site-footer {
-    border-color: #1e293b;
-}
-
-body.dark-theme .hero-image img {
-    border-color: #0f172a;
-    box-shadow: 0 0 0 4px #818cf8, 0 12px 30px rgba(0, 0, 0, 0.5);
-}
-
-body.dark-theme .post-card {
-    background-color: #1e293b;
-    border-color: #334155;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-}
-
-body.dark-theme .post-card:hover {
-    border-color: #818cf8;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
-}
-
-body.dark-theme .post-card p {
-    color: #94a3b8;
-}
-
-body.dark-theme .post-date {
-    color: #818cf8;
-}
-
-/* ==========================================
-   8. RESPONSIVE DESIGN (Mobile Friendly Base)
+   7. RESPONSIVE DESIGN (Mobile Friendly)
    ========================================== */
 @media (max-width: 768px) {
     .top-header {
@@ -361,7 +321,7 @@ body.dark-theme .post-date {
 }
 
 /* ==========================================
-   9. BLOG PAGE SPECIFIC STYLES
+   8. BLOG PAGE SPECIFIC STYLES
    ========================================== */
 .blog-section {
     padding: 60px 0;
@@ -372,6 +332,7 @@ body.dark-theme .post-date {
     font-weight: 800;
     letter-spacing: -1.5px;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .section-subtitle {
@@ -396,19 +357,20 @@ body.dark-theme .post-date {
     font-weight: 700;
     margin: 10px 0 15px 0;
     letter-spacing: -0.5px;
+    color: #ffffff;
 }
 
 .post-meta {
     font-size: 0.85rem;
     font-weight: 700;
-    color: #6366f1;
+    color: #818cf8;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .post-excerpt {
     font-size: 1.05rem;
-    color: #334155;
+    color: #94a3b8;
     margin-bottom: 20px;
     line-height: 1.7;
 }
@@ -419,25 +381,12 @@ body.dark-theme .post-date {
 
 .blog-separator {
     border: 0;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     margin: 20px 0;
 }
 
-body.dark-theme .section-subtitle,
-body.dark-theme .post-excerpt {
-    color: #94a3b8;
-}
-
-body.dark-theme .blog-separator {
-    border-color: #1e293b;
-}
-
-body.dark-theme .post-meta {
-    color: #818cf8;
-}
-
 /* ==========================================
-   10. CONTACT PAGE SPECIFIC STYLES
+   9. CONTACT PAGE SPECIFIC STYLES
    ========================================== */
 .contact-section {
     padding: 60px 0;
@@ -458,25 +407,26 @@ body.dark-theme .post-meta {
     font-weight: 700;
     margin-bottom: 20px;
     letter-spacing: -0.5px;
+    color: #ffffff;
 }
 
 .info-desc {
-    color: #475569;
+    color: #94a3b8;
     margin-bottom: 25px;
 }
 
 .info-details p {
     margin-bottom: 15px;
     font-size: 1.05rem;
-    color: #1e293b;
+    color: #cbd5e1;
 }
 
 .info-details a {
-    color: #6366f1;
+    color: #818cf8;
 }
 
 .info-details a:hover {
-    color: #4f46e5;
+    color: #a5b4fc;
 }
 
 .contact-form {
@@ -494,54 +444,22 @@ body.dark-theme .post-meta {
 .form-group label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #0f172a;
+    color: #f1f5f9;
 }
 
 .form-group input, .form-group textarea {
     padding: 12px 16px;
     font-family: inherit;
     font-size: 0.95rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: rgba(30, 41, 59, 0.5);
+    color: #ffffff;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-body.dark-theme .info-desc,
-body.dark-theme .info-details p {
-    color: #94a3b8;
-}
-
-body.dark-theme .info-details a {
-    color: #818cf8;
-}
-
-body.dark-theme .form-group label {
-    color: #ffffff;
-}
-
-body.dark-theme .form-group input, 
-body.dark-theme .form-group textarea {
-    background-color: #1e293b;
-    border-color: #334155;
-    color: #ffffff;
-}
-
-body.dark-theme .form-group input:focus, 
-body.dark-theme .form-group textarea:focus {
     border-color: #818cf8;
     box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        gap: 40px;
-    }
 }
