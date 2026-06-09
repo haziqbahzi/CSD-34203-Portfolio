@@ -1,4 +1,4 @@
-# 🌐 Academic & Multimedia Developer Portfolio
+#  Academic & Multimedia Developer Portfolio
 
 Welcome to my official individual project portfolio. This responsive web-based application is meticulously designed to showcase my academic journey, core IT competencies, and specialized expertise in multimedia systems, 3D animations, and Virtual Reality pipeline integration.
 
@@ -6,7 +6,7 @@ Welcome to my official individual project portfolio. This responsive web-based a
 
 ---
 
-## 🎨 Visual Identity & Aesthetic Themes
+##  Visual Identity & Aesthetic Themes
 
 The portfolio features a dynamic **Dual-Theme Engine** that transitions smoothly based on user preference:
 * **Premium Light Mode:** A clean, crisp, and professional corporate layout featuring soft slate gradients to maximize modern scannability.
@@ -14,7 +14,7 @@ The portfolio features a dynamic **Dual-Theme Engine** that transitions smoothly
 
 ---
 
-## 🚀 Core Features & Architecture
+##  Core Features & Architecture
 
 * **100% Fully Responsive Layout:** Fluid grid and flexbox infrastructure adapted to render flawlessly across widescreen desktops, tablets, and smartphones.
 * **High Performance Interactivity:** Zero external CSS frameworks or heavy libraries used—built entirely on vanilla architecture to achieve instant loading speeds.
@@ -26,7 +26,7 @@ The portfolio features a dynamic **Dual-Theme Engine** that transitions smoothly
 
 ---
 
-## 🎬 Highlighted Projects & Coursework Showcase
+##  Highlighted Projects & Coursework Showcase
 
 ### 1. VRTifacts (Final Year Project - Design Phase)
 An immersive Virtual Reality concept focused on digitalizing and preserving precious historical cultural heritage. Developed utilizing custom low-poly base meshes engineered in **Blender** and architectural design preparation intended for the **Unity Engine** environment.
@@ -41,7 +41,7 @@ A cinematic short film project demonstrating deep post-production workflows. Foc
 
 ---
 
-## 💻 Tech Stack & Engineering Tools
+##  Tech Stack & Engineering Tools
 
 * **Languages & Core:** HTML5 (Semantic Structure), CSS3 (Modern Flexbox/Grid Architecture), Vanilla JavaScript (Stateful Theme Management)
 * **Creative Production:** Blender (3D Modeling & Animation), Unity Engine (Interactive XR/VR Ideation)
@@ -49,9 +49,30 @@ A cinematic short film project demonstrating deep post-production workflows. Foc
 
 ---
 
-## 👤 Author Information
+##  Author Information
 
 * **Name:** Muhammad Haziq Bahzi Bin Asmawi
 * **Institution:** Universiti Sultan Zainal Abidin (UniSZA)  
 * **Faculty:** Faculty of Informatics & Computing  
-* **Major Area:** Bachelor of Information Technology (Hons)
+* **Major Area:** Bachelor of Information Technology (Informatic Media) with (Hons)
+
+---
+
+## 🛠️ How to Run & View the Project
+
+Since this portfolio is built entirely on native web standards (Vanilla HTML5, CSS3, and JavaScript), it does not require any heavy server installations or build compilations. You can run and review the project using either of the following methods:
+
+### Method 1: Live Production (Recommended)
+The project is automatically built and hosted globally via GitHub Pages. You can view the live interactive deployment directly by visiting:
+👉 **[https://haziqbahzi.github.io/CSD-34203-Portfolio/index.html](https://haziqbahzi.github.io/CSD-34203-Portfolio/index.html)**
+
+### Method 2: Local Execution
+If you prefer to run the source code locally on your machine:
+1. **Clone the Repository:** Open your terminal/command prompt and run:
+   ```bash
+   git clone [https://github.com/haziqbahzi/CSD-34203-Portfolio.git](https://github.com/haziqbahzi/CSD-34203-Portfolio.git)
+
+
+##  Deployed Link
+
+https://haziqbahzi.github.io/CSD-34203-Portfolio/ 
